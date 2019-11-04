@@ -9,18 +9,19 @@ function computerPlay() {
 }
 
 function finalScore() {
-  const winner = player > computer
-    ? (`You won! Score: Player - ${player}, Computer - ${computer}`)
-    : (`You lost! Score: Player - ${player}, Computer - ${computer}`);
+  const winner =
+    player > computer
+      ? `You won! Score: Player - ${player}, Computer - ${computer}`
+      : `You lost! Score: Player - ${player}, Computer - ${computer}`;
   document.getElementById('score').innerHTML = winner;
 }
 
 function playRound(playerSelection, computerSelection) {
-  const win = `${playerSelection.charAt(0).toUpperCase()
-                + playerSelection.slice(1)} beats ${computerSelection}.`;
-  const lose = `${computerSelection.charAt(0).toUpperCase()
-                + computerSelection.slice(1)} beats ${playerSelection}.`;
-  const tie = 'It\'s a tie! Try again.';
+  const win = `${playerSelection.charAt(0).toUpperCase() +
+    playerSelection.slice(1)} beats ${computerSelection}.`;
+  const lose = `${computerSelection.charAt(0).toUpperCase() +
+    computerSelection.slice(1)} beats ${playerSelection}.`;
+  const tie = "It's a tie! Try again.";
   if (playerSelection === 'rock') {
     if (computerSelection === 'scissors') {
       player += 1;
@@ -57,7 +58,7 @@ function playRound(playerSelection, computerSelection) {
 
 let playerSelection;
 const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
+buttons.forEach(button => {
   button.addEventListener('click', () => {
     if (button.id === 'rock') {
       playerSelection = 'rock';
